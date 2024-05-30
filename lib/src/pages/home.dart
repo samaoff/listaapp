@@ -96,11 +96,11 @@ class _HomeState extends State<Home> {
                     filled: true,
                     fillColor: Colors.white30,
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
+                      borderSide: const BorderSide(color: Colors.white),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
+                      borderSide: const BorderSide(color: Colors.white),
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
@@ -108,8 +108,8 @@ class _HomeState extends State<Home> {
               ),
             ),
             FloatingActionButton(
-              child: const Icon(Icons.add),
               onPressed: saveNewTask,
+              child:  const Icon(Icons.add),
             ),
           ],
         ),
