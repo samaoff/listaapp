@@ -65,13 +65,16 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple.shade200,
+      backgroundColor: Colors.grey[300],
       appBar: AppBar(
         title: const Text("Mi Lista"),
         foregroundColor: Colors.white,
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Colors.indigo,
       ),
       body: ListView.builder(
+        
+        padding: const EdgeInsets.only(bottom: 100),
+        
         itemCount: todoList.length,
         itemBuilder: (BuildContext context, index) {
           return ToDoList(
@@ -82,25 +85,39 @@ class _HomeState extends State<Home> {
           );
         },
       ),
+    
       floatingActionButton: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Row(
           children: [
             Expanded(
+              
               child: Padding(
+                
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: TextField(
                   controller: _controller,
+                  
+                  style: const TextStyle(
+                    fontSize: 20,
+                  fontWeight: FontWeight.bold,
+
+                  ),
                   decoration: InputDecoration(
+                    
                     hintText: "Nueva tarea",
                     filled: true,
-                    fillColor: Colors.white30,
+                    fillColor: Colors.white,
+                    
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                     enabledBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: Colors.white),
+                      borderSide: const BorderSide(color: Colors.black),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: Colors.white),
+                      borderSide: const BorderSide(color: Colors.black),
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
@@ -109,7 +126,9 @@ class _HomeState extends State<Home> {
             ),
             FloatingActionButton(
               onPressed: saveNewTask,
-              child:  const Icon(Icons.add),
+              child:  Icon(Icons.add),
+              backgroundColor: Colors.indigo,
+              foregroundColor: Colors.white,
             ),
           ],
         ),

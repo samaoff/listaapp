@@ -21,25 +21,39 @@ class ToDoList extends StatelessWidget {
       padding: const EdgeInsets.only(
         top: 10,
         left: 10,
-        right: 30,
+        right: 10,
         bottom: 0,
       ),
       child: Slidable(
+        
         endActionPane: ActionPane(
-          motion: StretchMotion(),
+        motion: StretchMotion(),
           children: [
             SlidableAction(
               onPressed: deleteFuntion,
               icon: Icons.delete,
               backgroundColor: Colors.red.shade300,
               borderRadius: BorderRadius.circular(20),
+              
             ),
           ],
         ),
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.deepPurple.shade100,
+            color: Colors.white,
             borderRadius: BorderRadius.circular(10),
+            border: Border.all(
+              color: Colors.indigo,
+            ),
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black54,
+                blurRadius: 1,
+                spreadRadius: 1,
+                offset: Offset(0, 2),
+              ),
+            ],
+          
           ),
           padding: EdgeInsets.all(10),
           child: Row(
@@ -47,19 +61,19 @@ class ToDoList extends StatelessWidget {
               Checkbox(
                 value: taskComplete,
                 onChanged: onChanged,
-                activeColor: Colors.deepPurple.shade900,
+                activeColor: Colors.indigo.shade900,
                 checkColor: Colors.white,
                 side: const BorderSide(color: Colors.black),
               ),
               Expanded(
                 child: Text(
                   taskName,
-                  maxLines: 2,
+                  maxLines: 4,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: Colors.deepPurple,
+                    color: Colors.black,
                     decoration: taskComplete
                         ? TextDecoration.lineThrough
                         : TextDecoration.none,
